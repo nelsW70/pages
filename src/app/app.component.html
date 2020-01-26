@@ -7,7 +7,7 @@
       <li
         class="page-item"
         [ngClass]="{ active: i === currentPage }"
-        *ngIf="i < 5"
+        *ngIf="checkWindowIndex(i)"
       >
         <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
       </li>
@@ -22,6 +22,6 @@
 </nav>
 
 <div>
-  <h4>{{ images[currentPage].title }}</h4>
+  <h4 appClass [backgroundColor]="'red'">{{ images[currentPage].title }}</h4>
   <img [src]="images[currentPage].url" alt="random pic" />
 </div>
